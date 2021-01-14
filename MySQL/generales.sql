@@ -12,3 +12,9 @@ GRANT ALL PRIVILEGES ON academia.* TO 'santiago'@'localhost';
 GRANT SELECT, INSERT ON academia.
 
 DESC tipo_documento; -- Muestra la tabla en forma descriptiva
+
+mysqldump -u user -p file_name > MySQL\script_exportable.sql -- Para exportar una base de datos MySQL desde terminal
+
+UNSIGNED --Es una llave que se usa en los valores tipo INT para no recibir valores negativos, y se define antes de PRIMARY KEY
+
+ALTER TABLE --Modifica los campos dentro de una tabla
