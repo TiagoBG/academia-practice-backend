@@ -22,7 +22,7 @@ app.get('/estudiantes', (req, res)=>{
     res.json(estudiantes)
 });
 
-app.set('port', process.env.PORT || 3000);
+app.set('port', process.env.PORT || 5000);
 
 app.listen(app.get('port'), ()=>{
     console.log(`Server running at port ${app.get('port')}`);
