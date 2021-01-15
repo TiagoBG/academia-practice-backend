@@ -117,4 +117,17 @@ router.delete('/actor/:id',(req, res)=>{
 
 });
 
+//QUERY COMPLEJO DEL EJEMPLO FINAL:
+
+//OJO REVISAR EL REPO DEL PROFE : https://meet.google.com/linkredirect?authuser=0&dest=https%3A%2F%2Fgithub.com%2Fagileinnova%2Facademia
+
+/* SELECT a.documento, CONCAT(a.nombres, ' ', a.apellidos) nombreActor, ta.perfil AS perfilActor, g.grado, g.letra, m.modulo
+FROM actores AS a
+INNER JOIN tipo_actores AS ta ON ta.id = a.tipo_actor_id
+JOIN integrantes_grupos AS ig ON ig.estudiante_id = a.id
+JOIN grupos g ON g.id = ig.grupo_id
+JOIN clases c ON c.grupo_id = g.id
+JOIN modulos m ON m.id = c.docente_id
+WHERE ta.id = 1 */
+
 module.exports = router;
