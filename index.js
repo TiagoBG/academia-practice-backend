@@ -1,8 +1,16 @@
 const express = require('express');
 const morgan = require('morgan');
 const app = express();
+const actores = require('./routes/actores');
+require('dotenv').config();
 
+
+//MIDDLEWARES
 app.use(morgan('dev'));
+app.use(express.json());
+
+//ROUTES
+app.use('/api', actores);
 
 app.get('/', (req, res)=>{
     res.send('<h1>API Academia</h1>')
@@ -14,6 +22,8 @@ app.get('/estudiantes', (req, res)=>{
     res.json(estudiantes)
 });
 
-app.listen(3000, ()=>{
-    console.log('Server running at port 3000');
+app.set('port', process.env.PORT || 3000);
+
+app.listen(app.get('port'), ()=>{
+    console.log(`Server running at port ${app.get('port')}`);
 });
