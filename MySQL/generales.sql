@@ -18,3 +18,5 @@ mysqldump -u user -p file_name > MySQL\script_exportable.sql -- Para exportar un
 UNSIGNED --Es una llave que se usa en los valores tipo INT para no recibir valores negativos, y se define antes de PRIMARY KEY
 
 ALTER TABLE --Modifica los campos dentro de una tabla
+
+-- COMANDO PARA GENERAR UN SCRIPT EXPORTABLE: mysqldump -u user -p database_name > folder\script_exportable.sql
